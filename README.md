@@ -53,6 +53,9 @@ the metrics there. CPU Usage, memory and container metrics were observed
 - Github secrets were added by using Docker hub's account username and secret key
 - a workflow was created called main.yml in order to build the docker image and push to docker
 
+## Docker Image 
+- access the docker image from here: https://hub.docker.com/repository/docker/scharukh7/player_scraper
+
 ## Conclusion:
 
 This project helped me understand how to make use selenium in order to scrape any website, helped me understand on how to bypass login page, cookies or any captcha or ads present on the website. Helped me gather any kind of data. 
