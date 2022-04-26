@@ -1,0 +1,26 @@
+global:
+  scrape_interval: 1s # scrape targets every 1 second.
+  scrape_timeout: 1s #if theres no response dont scrape.
+  evaluation_interval: 15s #15s ro evaluate e.g reloaing graphs with new data
+  # Attach these labels to any time series or alerts when communicating with
+  # external systems (federation, remote storage, Alertmanager).
+  external_labels:
+    monitor: 'codelab-monitor'
+
+# A scrape configuration containing exactly one endpoint to scrape:
+# Here it's Prometheus itself.
+scrape_configs:
+  # The job name added as a label `job=<job_name>` to any timeseries scraped
+  - job_name: 'prometheus'
+    # Override the global default and scrape targets from job every 5 seconds.
+    scrape_interval: '5s'
+    static_configs:
+      - targets: ['localhost:9090']
+  # OS monitoring
+  - job_name: 'node'
+    scrape_interval: '5s'
+    static_configs:
+      - targets: ['172.17.0.1:9100']
+        labels:
+          group: 'production' # notice we have defined two nodes to be labell>
+
